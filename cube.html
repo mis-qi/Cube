@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>立体旋转</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        .box{
+            margin:150px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(20deg) rotateY(20deg);
+            animation: root 5s linear infinite;
+        }
+        .box div{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+        .box:hover div:nth-of-type(1){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .box:hover div:nth-of-type(2){
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .box:hover div:nth-of-type(3){
+            transform: translateZ(100px);
+        }
+        .box:hover div:nth-of-type(4){
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .box:hover div:nth-of-type(5){
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .box:hover div:nth-of-type(6){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .top{
+
+            transform: rotateX(90deg) translateZ(50px);
+            /*background-image: url("img/7.jpg") ;*/
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .bottom{
+
+            transform: rotateX(-90deg) translateZ(50px);
+            background-image: url("img/7.jpg");
+            /*background-repeat: no-repeat;*/
+            background-size: cover;
+        }
+        .front{
+
+            transform: translateZ(50px);
+            /*background-image: url("img/7.jpg");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .back{
+            transform: rotateY(180deg) translateZ(50px);
+            /*background-image: url("7.jpg");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .left{
+            transform: rotateY(-90deg) translateZ(50px);
+            /*background-image: url("img/7.jpg");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .right{
+            transform: rotateY(90deg) translateZ(50px);
+            /*background-image: url("img/7.jpg");*/
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @keyframes root {
+            0%{
+                transform: rotateX(20deg) rotateY(20deg);
+            }
+            100%{
+                transform: rotateX(380deg) rotateY(380deg);
+            }
+        }
+        .box span {
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0px 0px -25px;
+            opacity: 0.8;
+            border: 1px solid #d3eef8;
+            background-image: url("img/7.jpg");
+        }
+        .in-top{
+            background: rgba(7, 3, 3, 0.8);
+            transform: translateZ(-25px);
+        }
+        .in-bottom{
+            background: rgba(242, 168, 65, 0.8);
+            transform: translateZ(25px);
+        }
+        .in-front{
+            background: rgba(83, 254, 42, 0.8);
+            transform: translateY(25px) rotateX(90deg);
+        }
+        .in-back{
+            background: rgba(255, 85, 253, 0.8);
+            transform: translateY(-25px) rotateX(-90deg);
+        }
+        .in-left{
+            background: rgba(44, 253, 255, 0.8);
+            transform:rotateY(-90deg) translateZ(25px);
+        }
+        .in-right{
+            background: rgba(22, 52, 124, 0.8);
+            transform:rotateY(90deg) translateZ(25px);
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top"><img src="me.jpg" alt=""></div>
+    <div class="bottom"><img src="me.jpg" alt=""></div>
+    <div class="front"><img src="me.jpg" alt=""></div>
+    <div class="back"><img src="me.jpg" alt=""></div>
+    <div class="left"><img src="me.jpg" alt=""></div>
+    <div class="right"><img src="me.jpg" alt=""></div>
+
+    <span class="in-top"><img src="me3.jpg" alt=""></span>
+    <span class="in-bottom"><img src="me3.jpg" alt=""></span>
+    <span class="in-front"><img src="me3.jpg" alt=""></span>
+    <span class="in-back"><img src="me3.jpg" alt=""></span>
+    <span class="in-left"><img src="me3.jpg" alt=""></span>
+    <span class="in-right"><img src="me3.jpg" alt=""></span>
+</div>
+</div>
+</body>
+</html>
+</html>
